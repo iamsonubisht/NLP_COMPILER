@@ -57,10 +57,10 @@ python main.py
 - ✅ Build a **GUI or web-based interface**
 
 ## 👨‍💻 Contributors
-- **Your Name** – NLP Processing
-- **Team Member 2** – Code Generation
-- **Team Member 3** – Compilation & Execution
-- **Team Member 4** – Integration & Testing
+- **Sonu Bisht** – NLP Processing
+- **Sourav Singh** – Code Generation
+- **Siddhi Kandpal** – Compilation & Execution
+- **Pardeep Singh Bisht** – Integration & Testing
 
 ---
 📢 **Feel free to expand or modify this project!** 🚀
