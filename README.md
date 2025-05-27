@@ -1,4 +1,35 @@
-# NLP Compiler
+# Custom SQL-Like Query Parser and Evaluator
+
+This project implements a **custom SQL-like query parser** using PLY (Python Lex-Yacc), enabling parsing and execution of simplified SQL queries on Pandas DataFrames. It also supports basic plotting commands like bar, line, and pie charts.
+
+---
+
+## Features
+
+- Lexical analysis and parsing of SQL-like statements (`SELECT`, `INSERT`, `DELETE`).
+- Supports `WHERE`, `GROUP BY`, `ORDER BY`, and `LIMIT` clauses.
+- Basic aggregate functions (`AVG`).
+- Custom metrics and simple function calls.
+- Data manipulation on in-memory Pandas DataFrames.
+- Support for plotting data with `PLOT BAR GRAPH`, `PLOT LINE GRAPH`, `PLOT PIE CHART`.
+- Easy to extend with additional SQL-like features.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.7+
+- Packages:
+  - `ply`
+  - `pandas`
+  - `matplotlib`
+
+You can install dependencies via:
+
+```bash
+pip install ply pandas matplotlib# NLP Compiler
 
 ## 📌 Project Description
 This project is an **NLP-based Compiler** that converts natural language math expressions into executable Python code. It extracts numbers and operations from user input, generates valid Python code, and executes it dynamically.
