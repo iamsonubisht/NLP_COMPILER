@@ -113,9 +113,10 @@ EDSQL-main/
 
 ## Contributors
 
-* [Your Name](https://github.com/yourusername)
-* [Team Member 2](https://github.com/username2)
-* [Team Member 3](https://github.com/username3)
+* [Sonu Bisht](https://github.com/iamsonubisht)
+* [Siddhi Kandpal](https://github.com/siddhikandpal)
+* [Sourabh singh Bajetha](https://github.com/SOURABH-SINGH-BAJETHA)
+* [Pardeep Singh Bisht](https://github.com/Pradeep-Singh-Bisht)
 
 ## License
 
@@ -154,11 +155,9 @@ venv/
 
 ```
 MIT License
-Copyright (c) 2024 [Your Name]
+Copyright (c) 2025 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy...
 ```
 
 ---
-
-If you'd like, I can help generate the LICENSE file content or customize this README with more sections like "How to Contribute," "Roadmap," or "FAQ." Just let me know!
