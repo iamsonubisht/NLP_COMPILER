@@ -1,4 +1,3 @@
-Sure! Here's a clean, complete `README.md` file for your **EDSQL Compiler** project based on what you shared. You can copy-paste this directly into your repo:
 
 ````markdown
 # EDSQL Compiler - Natural Language to SQL Translator
