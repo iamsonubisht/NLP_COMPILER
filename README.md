@@ -1,98 +1,164 @@
-# Custom SQL-Like Query Parser and Evaluator
+Sure! Here's a clean, complete `README.md` file for your **EDSQL Compiler** project based on what you shared. You can copy-paste this directly into your repo:
 
-This project implements a **custom SQL-like query parser** using PLY (Python Lex-Yacc), enabling parsing and execution of simplified SQL queries on Pandas DataFrames. It also supports basic plotting commands like bar, line, and pie charts.
+````markdown
+# EDSQL Compiler - Natural Language to SQL Translator
 
----
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+
+A web-based compiler that converts natural language queries about student data into SQL-like commands (EDSQL) and executes them.
 
 ## Features
 
-- Lexical analysis and parsing of SQL-like statements (`SELECT`, `INSERT`, `DELETE`).
-- Supports `WHERE`, `GROUP BY`, `ORDER BY`, and `LIMIT` clauses.
-- Basic aggregate functions (`AVG`).
-- Custom metrics and simple function calls.
-- Data manipulation on in-memory Pandas DataFrames.
-- Support for plotting data with `PLOT BAR GRAPH`, `PLOT LINE GRAPH`, `PLOT PIE CHART`.
-- Easy to extend with additional SQL-like features.
+- **Natural Language Processing**: Understands queries like:
+  - "Show students with grades above 80"
+  - "List names starting with A"
+  - "Calculate average grades by class"
+- **CRUD Operations**:
+  - `insert name="John Doe" and id="1001"`
+  - `remove id=1001`
+  - `select * from students`
+- **Data Analysis**:
+  - Average/mean calculations
+  - Grouped aggregations
+  - Conditional filtering
+- **Web Interface**: Interactive query runner with results display
+
+## Technology Stack
+
+| Component        | Technology          |
+|------------------|---------------------|
+| Frontend         | HTML5, CSS3, Bootstrap 5 |
+| Backend          | Python Flask        |
+| Query Processing | Pandas, Regular Expressions |
+| NLP              | Custom pattern matching |
+| Build Tools      | Python 3.8+         |
+
+## Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/EDSQL-Compiler.git
+   cd EDSQL-Compiler
+````
+
+2. **Install dependencies**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Prepare the data**:
+
+   * Place your `students.csv` in the project root
+   * Format: `name,id,grades,class` (include header row)
+
+4. **Run the application**:
+
+   ```bash
+   python app.py
+   ```
+
+5. **Access the web interface**:
+   Open [http://localhost:5000](http://localhost:5000) in your browser
+
+## Usage Examples
+
+### Basic Queries
+
+```text
+show students with grades above 85
+list names ending with 'n'
+select * from students
+```
+
+### Insert Operations
+
+```text
+insert name="Alice Wonderland" and id="1001"
+insert name="Bob Builder"
+```
+
+### Delete Operations
+
+```text
+remove id=1001
+delete student with id="1002"
+```
+
+### Advanced Analysis
+
+```text
+calculate average grades
+show mean marks by class
+what is the average grade for students with grades above 80?
+```
+
+## Project Structure
+
+```
+EDSQL-main/
+├── app.py                # Flask application and routes
+├── nl_to_edsql.py        # Natural language to EDSQL converter
+├── matcher_utils.py      # Entity extraction from queries
+├── intent_classifier.py  # Query intent classification
+├── students.csv          # Sample student data
+├── static/
+│   └── styles.css        # Custom styles
+├── templates/
+│   └── index.html        # Web interface
+└── requirements.txt      # Python dependencies
+```
+
+## Contributors
+
+* [Your Name](https://github.com/yourusername)
+* [Team Member 2](https://github.com/username2)
+* [Team Member 3](https://github.com/username3)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+* Inspired by compiler design principles from *Compilers: Principles, Techniques, and Tools* (Dragon Book)
+* Flask documentation for web interface implementation
+* Pandas library for data manipulation
 
 ---
 
-## Getting Started
+### Additional Files
 
-### Prerequisites
+**requirements.txt**
 
-- Python 3.7+
-- Packages:
-  - `ply`
-  - `pandas`
-  - `matplotlib`
-
-You can install dependencies via:
-
-```bash
-pip install ply pandas matplotlib# NLP Compiler
-
-## 📌 Project Description
-This project is an **NLP-based Compiler** that converts natural language math expressions into executable Python code. It extracts numbers and operations from user input, generates valid Python code, and executes it dynamically.
-
-## 🚀 Features
-- Converts English math expressions into Python code
-- Supports **addition, subtraction, multiplication, and division**
-- Handles **errors like division by zero**
-- Uses **spaCy** for NLP processing
-- Modular structure for easy expansion
-
-## 🛠 Installation
-### 1️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
+```
+flask==2.0.1
+pandas==1.3.3
+python-dotenv==0.19.0
 ```
 
-### 2️⃣ Run the Compiler
-```bash
-python main.py
+**.gitignore**
+
+```
+__pycache__/
+*.py[cod]
+*.csv
+*.log
+venv/
+.env
 ```
 
-## 📂 Project Directory Structure
+**LICENSE** (MIT)
+
 ```
-📂 NLP_Compiler_Project
-│── 📄 main.py              # Main script to integrate all components
-│── 📄 parser.py            # Extracts numbers & operations from text
-│── 📄 code_generator.py     # Generates Python code dynamically
-│── 📄 compiler.py          # Compiles and executes Python code
-│── 📄 temp.py              # Temporary file for execution
-│── 📄 requirements.txt     # Dependencies
-│── 📄 README.md            # Project documentation
+MIT License
+Copyright (c) 2024 [Your Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy...
 ```
-
-## 🔥 Usage Examples
-| User Input | Output |
-|------------|--------|
-| Add 5 and 3 | Output: 8 |
-| Multiply 4 by 6 | Output: 24 |
-| Divide 10 by 0 | Error: Division by zero! |
-
-## 📜 How It Works
-1️⃣ **NLP Processing (parser.py)**
-   - Extracts numbers and operations from the input sentence.
-
-2️⃣ **Code Generation (code_generator.py)**
-   - Converts the extracted data into valid Python code.
-
-3️⃣ **Compilation & Execution (compiler.py)**
-   - Writes the generated code to a temporary file and executes it.
-
-## 🎯 Future Enhancements
-- ✅ Support for **modulus, exponentiation, and square roots**
-- ✅ Implement **question-based queries** (e.g., "What is the sum of 4 and 6?")
-- ✅ Build a **GUI or web-based interface**
-
-## 👨‍💻 Contributors
-- **Sonu Bisht** – NLP Processing
-- **Sourav Singh** – Code Generation
-- **Siddhi Kandpal** – Compilation & Execution
-- **Pardeep Singh Bisht** – Integration & Testing
 
 ---
-📢 **Feel free to expand or modify this project!** 🚀
 
+If you'd like, I can help generate the LICENSE file content or customize this README with more sections like "How to Contribute," "Roadmap," or "FAQ." Just let me know!
